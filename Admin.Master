@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Sample.Admin" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .navbar
+        {
+            background: #00c3ff; /* fallback for old browser*/
+            background: -webkit-linear-gradient(to right,#ffff1c , #00c3ff); /*Chrome 10-25,Safari 5.1.6*/
+            background: linear-gradient(to right,#fff1c,#00c3ff); /*W3C, IE 10+, Firefox 16+, Chrome 26+, Opera12+, Safari 7+*/
+            
+        }
+        .button
+        {
+            background: #0052D4; /*fallback for old browsers*/
+            background: -webkit-linear-gradient(to right, #6FB1FC, #4364F7, #0052D4); /*Chrome 10-25,Safari 5.1.6*/
+            background: linear-gradient(to right, #6FB1FC, #4364F7, #0053D4) /*W3C, IE 10+, Firefox 16+, Chrome 26+, Opera12+, Safari 7+*/
+
+        }
+         /* Added CSS for making the image span the same width as the table */
+        .image-container {
+            width: 958px; /* This matches the width of the buttons/table */
+            margin: 0 auto; /* Centers the image container */
+        }
+
+        .image-container img {
+            width: 100%; /* Ensures the image stretches to fill the container */
+            height: auto; /* Keeps the aspect ratio of the image intact */
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table align="center">
+                <tr>
+                    <td style="color:aqua; " class="auto-style1">
+                        <div class="image-container">
+                        <asp:Image ID="Image1" runat="server" BoarderColor="#666666"  BorderWidth="3px" Height="160px" Width="960px" ImageUrl="~/Images/adminmanager.png" />
+                            </div>
+                            
+                    </td>
+                </tr>
+                <tr style="border-width: 8px; border-color: #666666; width:120px; color: #666666; height:60px" bgcolor="#c547ff">
+
+                    <td class="auto-style2">
+                    <div class="navbar">
+                        <table align="center" cellpadding="10">
+                            <tr style="border-color: #666666;">
+                                <td>
+                                    <asp:Button CssClass="button" ID="btnCategory" runat="server" Text="Add Category"  Height="49px" Width="171px" Font-Bold="true" Font-Size="Medium" CausesValidation="false" BorderColor="#666666" OnClick="btnCategory_Click"/>
+                                </td>
+                                <td>
+                                    <asp:Button CssClass="button" ID="ButtonAddProduct" runat="server" Text="Add Product" Height="49px" Width="171px" Font-Bold="True"  Font-Size="Medium" CausesValidation="false" BorderColor="#666666" OnClick="ButtonAddProduct_Click"/>
+                                </td>
+                                <td>
+                                    <asp:Button CssClass="button" ID="btnUpdateProduct" runat="server" Text="Update Product" Height="49px" Width="171px" Font-Bold="True"  Font-Size="Medium" CausesValidation="false" BorderColor="#666666" OnClick="btnUpdateProduct_Click" />
+                                </td>
+                                <td>
+                                    <asp:Button CssClass="button" ID="Order_Status" runat="server" Text="Order Status" Height="49px" Width="171px" Font-Bold="True"  Font-Size="Medium" CausesValidation="false" BorderColor="#666666" OnClick="Order_Status_Click" />
+                                </td>
+                                <td>
+                                    <asp:Button CssClass="button" ID="btnLogOut" runat="server" Text="LogOut" Height="49px" Width="171px" Font-Bold="True"  Font-Size="Medium" CausesValidation="false" BorderColor="#666666" OnClick="btnLogOut_Click" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+               
+            </table>
+           
+        </div>
+    </form>
+</body>
+</html>
